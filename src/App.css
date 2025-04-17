@@ -1,0 +1,13 @@
+/* Base styles for dark mode toggle */
+.theme-toggle {
+  @apply h-10 w-10 rounded-full flex items-center justify-center text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors;
+}
+
+/* Base border styles */
+.screen-line-before::before,
+.screen-line-after::after {
+  content: '';
+  display: block;
+  height: 1px;
+  @apply bg-gradient-to-r from-transparent via-gray-300 dark:via-gray-700 to-transparent;
+}
