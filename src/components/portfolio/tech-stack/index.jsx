@@ -2,12 +2,16 @@ import React from 'react';
 import ME from '../../../static/data/me';
 import { useLanguage } from '../../../context/LanguageContext';
 
-function Skill({ skill }) {
+function Skill({ skill, isDarkMode }) {
     return (
         <div className="relative group flex flex-col items-center">
             <div className="w-8 h-8 flex items-center justify-center mb-4">
                 <img
-                    src={skill.icon}
+                    src={
+                        isDarkMode && skill.iconDark
+                            ? skill.iconDark
+                            : skill.icon
+                    }
                     alt={skill.name}
                     className="max-w-full max-h-full object-contain transition-transform duration-300 group-hover:scale-110"
                 />
@@ -19,7 +23,7 @@ function Skill({ skill }) {
     );
 }
 
-function SkillGroup({ title, items }) {
+function SkillGroup({ title, items, isDarkMode }) {
     if (!items || items.length === 0) return null;
 
     return (
@@ -27,18 +31,19 @@ function SkillGroup({ title, items }) {
             <h3 className="text-base font-medium text-foreground mb-2">
                 {title}
             </h3>
-            <div className="grid grid-cols-5 sm:grid-cols-7 md:grid-cols-9 lg:grid-cols-11 gap-1 gap-y-2">
+            <div className="grid grid-cols-5 sm:grid-cols-7 md:grid-cols-9 lg:grid-cols-11 gap-1 gap-y-2 cursor-pointer">
                 {items.map((item, index) => (
-                    <Skill key={index} skill={item} />
+                    <Skill key={index} skill={item} isDarkMode={isDarkMode} />
                 ))}
             </div>
         </div>
     );
 }
 
-export default function TechStackSection() {
+export default function TechStackSection({ isDarkMode }) {
     const { language } = useLanguage();
     const ui = ME.ui[language];
+    
 
     return (
         <section
@@ -49,10 +54,10 @@ export default function TechStackSection() {
                 {ui.skills}
             </h2>
             <div className="space-y-0">
-                <SkillGroup title={ui.programmingSkills} items={ME.skills} />
-                <SkillGroup title={ui.libraries} items={ME.libraries} />
-                <SkillGroup title={ui.tools} items={ME.tools} />
-                <SkillGroup title={ui.databases} items={ME.databases} />
+                <SkillGroup title={ui.programmingSkills} items={ME.skills} isDarkMode={isDarkMode} />
+                <SkillGroup title={ui.libraries} items={ME.libraries} isDarkMode={isDarkMode} />
+                <SkillGroup title={ui.tools} items={ME.tools} isDarkMode={isDarkMode} />
+                <SkillGroup title={ui.databases} items={ME.databases} isDarkMode={isDarkMode} />
             </div>
         </section>
     );

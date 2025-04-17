@@ -1,9 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-sans: 'JetBrains Mono', monospace, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   --radius: 0.625rem;
   
   --background: oklch(1 0 0);
@@ -61,6 +63,7 @@
   html {
     @apply scroll-smooth;
     scroll-padding: 80px;
+    scroll-behavior: smooth;
   }
   
   body {
@@ -70,6 +73,8 @@
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    /* Ngăn overscroll cho trải nghiệm mượt mà */
+    overscroll-behavior: none;
   }
   
   /* Custom scrollbar styling */
@@ -89,6 +94,8 @@
   * {
     scrollbar-width: thin;
     scrollbar-color: var(--d-border) transparent;
+    /* Cải thiện scroll performance */
+    -webkit-overflow-scrolling: touch;
   }
 }
 
@@ -102,8 +109,36 @@
   }
 }
 
+@keyframes slideUp {
+  from { transform: translateY(30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes zoomIn {
+  from { transform: scale(0.95); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes floatAnimation {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
 .animate-fadeIn {
-  animation: fadeIn 0.5s ease-in-out;
+  animation: fadeIn 0.8s ease forwards;
+}
+
+.animate-slideUp {
+  animation: slideUp 0.8s ease forwards;
+}
+
+.animate-zoomIn {
+  animation: zoomIn 0.8s ease forwards;
+}
+
+.animate-float {
+  animation: floatAnimation 3s ease-in-out infinite;
 }
 
 /* Screen line styles */
@@ -113,4 +148,83 @@
   display: block;
   height: 1px;
   @apply bg-gradient-to-r from-transparent via-d-border to-transparent;
+}
+
+/* 3D Flip effect utilities */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.transform-style-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
+/* UX Improvements */
+.interactive {
+  @apply transition-all duration-300 hover:scale-105 active:scale-95;
+}
+
+.card {
+  @apply rounded-lg border border-border p-6 transition-all duration-300 hover:shadow-md;
+}
+
+.card:hover {
+  border-color: var(--primary);
+  opacity: 0.9;
+}
+
+.code-text {
+  font-feature-settings: "liga" 0, "calt" 0;
+  letter-spacing: 0;
+}
+
+/* Grid Pattern */
+.bg-grid-pattern {
+  background-image: 
+    linear-gradient(to right, rgba(var(--foreground-rgb), 0.1) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(var(--foreground-rgb), 0.1) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* Các hiệu ứng gradient khác */
+.text-gradient {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(to right, var(--primary), #a855f7);
+}
+
+/* Animation cho scroll down */
+@keyframes scroll-down-arrow {
+  0% { transform: translateY(0); opacity: 0.8; }
+  50% { transform: translateY(10px); opacity: 1; }
+  100% { transform: translateY(0); opacity: 0.8; }
+}
+
+.animate-scroll-down {
+  animation: scroll-down-arrow 2s infinite ease-in-out;
+}
+
+/* Animation cho đường nét SVG */
+@keyframes draw-path {
+  0% {
+    stroke-dashoffset: 1;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.path-animation {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: draw-path 2.5s forwards ease-in-out;
 }

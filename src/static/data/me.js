@@ -1,6 +1,7 @@
 const ME = {
     name: 'Định Đức',
     avatar: '/image/me.jpg',
+    avatar2: '/image/me-2.jpg',
     role: 'Frontend Developer',
     address: 'Đà Nẵng, Việt Nam',
     socials: [
@@ -15,8 +16,8 @@ const ME = {
             link: 'https://www.instagram.com/chocon2k4',
         },
         {
+            icon: '/tech-stack/github-light.svg',
             iconDark: '/tech-stack/github-dark.svg',
-            icon: '/external/github.svg',
             name: 'Github',
             link: 'https://github.com/dinhducbkdn2004',
         },
@@ -54,14 +55,13 @@ const ME = {
         { name: 'Ant Design', icon: '/tech-stack/ant-design.svg' },
         { name: 'Socket.io', icon: '/tech-stack/socket-io.svg' },
         { name: 'Node.js', icon: '/tech-stack/nodejs.svg' },
-
     ],
     tools: [
         { name: 'Git', icon: '/tech-stack/git.svg' },
         {
             name: 'GitHub',
-            icon: '/tech-stack/github-dark.svg',
-            iconDark: '/tech-stack/github-light.svg',
+            icon: '/tech-stack/github-light.svg',
+            iconDark: '/tech-stack/github-dark.svg',
         },
         { name: 'Visual Studio Code', icon: '/tech-stack/vs-code.svg' },
         { name: 'Postman', icon: '/tech-stack/postman.svg' },

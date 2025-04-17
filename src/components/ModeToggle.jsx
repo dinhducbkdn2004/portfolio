@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Sun, Moon, Monitor } from 'lucide-react';
+import { Sun, Moon } from 'lucide-react';
 
 function ThemeOption({ icon, value, isActive, onClick }) {
     return (
@@ -28,63 +28,46 @@ const THEME_OPTIONS = [
         value: 'light',
     },
     {
-        icon: <Monitor size={16} />,
-        value: 'system',
-    },
-    {
         icon: <Moon size={16} />,
         value: 'dark',
     },
 ];
 
 export default function ModeToggle() {
-    const [theme, setTheme] = useState('system');
+    const [theme, setTheme] = useState('light');
     const [isMounted, setIsMounted] = useState(false);
 
     // Sử dụng local storage để lưu trữ theme
     useEffect(() => {
         setIsMounted(true);
         const storedTheme = localStorage.getItem('theme');
-        if (storedTheme) {
+        if (
+            storedTheme &&
+            (storedTheme === 'light' || storedTheme === 'dark')
+        ) {
             setTheme(storedTheme);
             applyTheme(storedTheme);
         } else {
-            // Mặc định sử dụng system theme
-            const prefersDark = window.matchMedia(
-                '(prefers-color-scheme: dark)'
-            ).matches;
-            applyTheme(prefersDark ? 'dark' : 'light');
+            // Mặc định sử dụng light theme
+            setTheme('light');
+            applyTheme('light');
         }
     }, []);
-
-    // Theo dõi thay đổi system theme
-    useEffect(() => {
-        if (theme === 'system') {
-            const mediaQuery = window.matchMedia(
-                '(prefers-color-scheme: dark)'
-            );
-            const handleChange = (e) => {
-                applyTheme(e.matches ? 'dark' : 'light');
-            };
-
-            mediaQuery.addEventListener('change', handleChange);
-            return () => mediaQuery.removeEventListener('change', handleChange);
-        }
-    }, [theme]);
 
     // Áp dụng theme
     const applyTheme = (newTheme) => {
         const root = document.documentElement;
 
-        if (
-            newTheme === 'dark' ||
-            (newTheme === 'system' &&
-                window.matchMedia('(prefers-color-scheme: dark)').matches)
-        ) {
+        if (newTheme === 'dark') {
             root.classList.add('dark');
         } else {
             root.classList.remove('dark');
         }
+
+        // Dispatch event để các component khác có thể phản ứng với sự thay đổi theme
+        document.dispatchEvent(
+            new CustomEvent('themeChange', { detail: { theme: newTheme } })
+        );
     };
 
     const handleSetTheme = (value) => {
@@ -93,14 +76,22 @@ export default function ModeToggle() {
         applyTheme(value);
     };
 
+    const toggleTheme = () => {
+        const newTheme = theme === 'light' ? 'dark' : 'light';
+        setTheme(newTheme);
+        localStorage.setItem('theme', newTheme);
+        applyTheme(newTheme);
+    };
+
     if (!isMounted) {
-        return <div className="flex h-8 w-24" />;
+        return <div className="flex h-8 w-12" />;
     }
 
     return (
         <div
             className="inline-flex items-center overflow-hidden rounded-full bg-background ring-1 ring-border"
             role="radiogroup"
+            onClick={toggleTheme}
         >
             {THEME_OPTIONS.map((option) => (
                 <ThemeOption
@@ -108,7 +99,7 @@ export default function ModeToggle() {
                     icon={option.icon}
                     value={option.value}
                     isActive={theme === option.value}
-                    onClick={handleSetTheme}
+                    onClick={() => handleSetTheme(option.value)}
                 />
             ))}
         </div>

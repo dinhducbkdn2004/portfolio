@@ -48,7 +48,13 @@ export default {
             animation: {
                 'accordion-down': 'accordion-down 0.3s ease-out',
                 'accordion-up': 'accordion-up 0.3s ease-out',
-                'fade-in': 'fadeIn 0.5s ease-in-out',
+                'fade-in': 'fadeIn 0.8s ease-in-out forwards',
+                'fade-up': 'fadeUp 1s ease-out forwards',
+                'slide-in': 'slideIn 0.8s ease-out forwards',
+                pulse: 'pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                bounce: 'bounce 1s infinite',
+                spin: 'spin 1s linear infinite',
+                float: 'float 3s ease-in-out infinite',
             },
             keyframes: {
                 'accordion-down': {
@@ -60,8 +66,37 @@ export default {
                     to: { height: '0' },
                 },
                 fadeIn: {
-                    from: { opacity: '0' },
-                    to: { opacity: '1' },
+                    '0%': { opacity: '0' },
+                    '100%': { opacity: '1' },
+                },
+                fadeUp: {
+                    '0%': { opacity: '0', transform: 'translateY(20px)' },
+                    '100%': { opacity: '1', transform: 'translateY(0)' },
+                },
+                slideIn: {
+                    '0%': { opacity: '0', transform: 'translateX(-20px)' },
+                    '100%': { opacity: '1', transform: 'translateX(0)' },
+                },
+                float: {
+                    '0%, 100%': { transform: 'translateY(0)' },
+                    '50%': { transform: 'translateY(-10px)' },
+                },
+                pulse: {
+                    '0%, 100%': { opacity: '1' },
+                    '50%': { opacity: '.5' },
+                },
+                spin: {
+                    to: { transform: 'rotate(360deg)' },
+                },
+                bounce: {
+                    '0%, 100%': {
+                        transform: 'translateY(-5%)',
+                        animationTimingFunction: 'cubic-bezier(0.8, 0, 1, 1)',
+                    },
+                    '50%': {
+                        transform: 'translateY(0)',
+                        animationTimingFunction: 'cubic-bezier(0, 0, 0.2, 1)',
+                    },
                 },
             },
         },
