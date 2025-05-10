@@ -11,19 +11,37 @@ export default function PanelSection() {
     const [scrollY, setScrollY] = useState(0);
     const [activeSection, setActiveSection] = useState('overview');
     const [mounted, setMounted] = useState(false);
+    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
     // Typed text effect state
     const [typedText, setTypedText] = useState('');
-    const fullText =
+    const [fullText, setFullText] = useState(
         language === 'vi'
             ? 'Xin chào, tôi là lập trình viên!'
-            : 'Hello, I am a developer!';
+            : 'Hello, I am a developer!'
+    );
     const [typingIndex, setTypingIndex] = useState(0);
     const [isTyping, setIsTyping] = useState(true);
 
     useEffect(() => {
         setMounted(true);
     }, []);
+
+    // Update text when language changes
+    useEffect(() => {
+        if (!mounted) return;
+
+        const newText =
+            language === 'vi'
+                ? 'Xin chào, tôi là lập trình viên!'
+                : 'Hello, I am a developer!';
+
+        setFullText(newText);
+        // Reset typing animation when language changes
+        setTypedText('');
+        setTypingIndex(0);
+        setIsTyping(true);
+    }, [language, mounted]);
 
     // Typing effect
     useEffect(() => {
@@ -80,13 +98,7 @@ export default function PanelSection() {
         setScrollY(currentScrollY);
         setScrolled(currentScrollY > 20);
 
-        const sections = [
-            'overview',
-            'about',
-            'skills',
-            'experience',
-            'projects',
-        ];
+        const sections = ['overview', 'about', 'skills', 'projects'];
 
         // Cải thiện phát hiện section hiện tại
         const viewportHeight = window.innerHeight;
@@ -118,6 +130,12 @@ export default function PanelSection() {
         };
     }, [mounted, handleScroll]);
 
+    // Đóng mobile menu khi click vào link
+    const handleMobileNavClick = (id) => {
+        scrollToSection(id);
+        setMobileMenuOpen(false);
+    };
+
     if (!mounted) return null;
 
     return (
@@ -139,35 +157,92 @@ export default function PanelSection() {
                     >
                         <span className="code-text">{'< Portfolio />'}</span>
                     </div>
+
+                    {/* Desktop Navigation */}
                     <div className="hidden md:flex gap-6">
-                        {[
-                            'overview',
-                            'about',
-                            'skills',
-                            'experience',
-                            'projects',
-                        ].map((section) => (
-                            <a
-                                key={section}
-                                href={`#${section}`}
-                                className={`transition-all duration-300 hover:text-primary relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:bg-primary after:transition-all after:duration-300 code-text text-sm 
+                        {['overview', 'about', 'skills', 'projects'].map(
+                            (section) => (
+                                <a
+                                    key={section}
+                                    href={`#${section}`}
+                                    className={`transition-all duration-300 hover:text-primary relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:bg-primary after:transition-all after:duration-300 code-text text-sm 
                                 ${
                                     activeSection === section
                                         ? 'text-primary after:w-full'
                                         : 'after:w-0 hover:after:w-full'
                                 }`}
-                                onClick={(e) => {
-                                    e.preventDefault();
-                                    scrollToSection(section);
-                                }}
-                            >
-                                {ui[section]}
-                            </a>
-                        ))}
+                                    onClick={(e) => {
+                                        e.preventDefault();
+                                        scrollToSection(section);
+                                    }}
+                                >
+                                    {ui[section]}
+                                </a>
+                            )
+                        )}
                     </div>
-                    <div className="flex items-center gap-2">
+
+                    <div className="flex items-center gap-3">
                         <LanguageToggle />
                         <ModeToggle />
+
+                        {/* Hamburger button */}
+                        <button
+                            className="md:hidden flex flex-col justify-center items-center w-6 h-6 space-y-1.5 focus:outline-none"
+                            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                            aria-label="Toggle mobile menu"
+                        >
+                            <span
+                                className={`block w-6 h-0.5 bg-foreground transform transition duration-300 ease-in-out ${
+                                    mobileMenuOpen
+                                        ? 'rotate-45 translate-y-2'
+                                        : ''
+                                }`}
+                            />
+                            <span
+                                className={`block w-6 h-0.5 bg-foreground transition duration-200 ${
+                                    mobileMenuOpen ? 'opacity-0' : ''
+                                }`}
+                            />
+                            <span
+                                className={`block w-6 h-0.5 bg-foreground transform transition duration-300 ease-in-out ${
+                                    mobileMenuOpen
+                                        ? '-rotate-45 -translate-y-2'
+                                        : ''
+                                }`}
+                            />
+                        </button>
+                    </div>
+                </div>
+
+                {/* Mobile Navigation */}
+                <div
+                    className={`md:hidden transition-all duration-300 ease-in-out overflow-hidden ${
+                        mobileMenuOpen
+                            ? 'max-h-60 opacity-100'
+                            : 'max-h-0 opacity-0'
+                    }`}
+                >
+                    <div className="flex flex-col space-y-3 py-3 px-6 bg-background/95 backdrop-blur-md border-t border-border">
+                        {['overview', 'about', 'skills', 'projects'].map(
+                            (section) => (
+                                <a
+                                    key={section}
+                                    href={`#${section}`}
+                                    className={`py-2 px-4 rounded-md transition-all duration-300 ${
+                                        activeSection === section
+                                            ? 'bg-primary/10 text-primary'
+                                            : 'hover:bg-primary/5'
+                                    }`}
+                                    onClick={(e) => {
+                                        e.preventDefault();
+                                        handleMobileNavClick(section);
+                                    }}
+                                >
+                                    {ui[section]}
+                                </a>
+                            )
+                        )}
                     </div>
                 </div>
             </nav>
@@ -183,26 +258,28 @@ export default function PanelSection() {
                 ></div>
 
                 {/* SVG D Animation */}
-                <div 
+                <div
                     className="absolute inset-0 flex items-center justify-center overflow-hidden opacity-5 dark:opacity-10"
                     style={{
-                        transform: `scale(${1 + scrollY * 0.001}) translateY(${scrollY * 0.05}px)`,
+                        transform: `scale(${1 + scrollY * 0.001}) translateY(${
+                            scrollY * 0.05
+                        }px)`,
                     }}
                 >
-                    <svg 
-                        className="w-[800px] h-[800px] text-primary" 
-                        viewBox="0 0 500 500" 
-                        fill="none" 
+                    <svg
+                        className="w-[800px] h-[800px] text-primary"
+                        viewBox="0 0 500 500"
+                        fill="none"
                         xmlns="http://www.w3.org/2000/svg"
                     >
-                        <path 
-                            d="M150 100C150 100 200 100 250 100C300 100 350 125 375 175C400 225 400 275 375 325C350 375 300 400 250 400C200 400 150 400 150 400L150 100Z" 
-                            stroke="currentColor" 
-                            strokeWidth="20" 
-                            strokeLinecap="round" 
-                            strokeLinejoin="round" 
+                        <path
+                            d="M150 100C150 100 200 100 250 100C300 100 350 125 375 175C400 225 400 275 375 325C350 375 300 400 250 400C200 400 150 400 150 400L150 100Z"
+                            stroke="currentColor"
+                            strokeWidth="20"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
                             pathLength="1"
-                            className="path-animation" 
+                            className="path-animation"
                         />
                     </svg>
                 </div>

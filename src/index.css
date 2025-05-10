@@ -29,6 +29,15 @@
   /* Grid và border cho thiết kế */
   --d-border: oklch(0.929 0.013 255.508);
   --d-grid: oklch(0.968 0.007 247.896);
+  
+  /* RGB values cho animation */
+  --primary-rgb: 41, 63, 125;
+  --highlight-gradient: linear-gradient(to right, var(--primary), #a855f7);
+  --card-hover-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --animation-timing: cubic-bezier(0.4, 0, 0.2, 1);
+  --animation-duration-slow: 700ms;
+  --animation-duration-medium: 500ms;
+  --animation-duration-fast: 300ms;
 }
 
 .dark {
@@ -53,6 +62,10 @@
   /* Grid và border cho dark mode */
   --d-border: oklch(0.279 0.041 260.031);
   --d-grid: oklch(0.208 0.042 265.755);
+  
+  /* RGB values cho animation trong dark mode */
+  --primary-rgb: 184, 194, 229;
+  --card-hover-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
 }
 
 @layer base {
@@ -202,6 +215,121 @@
   background-image: linear-gradient(to right, var(--primary), #a855f7);
 }
 
+/* Animation cho accordion */
+@keyframes accordion-down {
+  from {
+    height: 0;
+  }
+  to {
+    height: var(--radix-accordion-content-height);
+  }
+}
+
+@keyframes accordion-up {
+  from {
+    height: var(--radix-accordion-content-height);
+  }
+  to {
+    height: 0;
+  }
+}
+
+.accordion-content {
+  overflow: hidden;
+  transition: height 0.3s ease;
+}
+
+.accordion-content-enter {
+  height: 0;
+}
+
+.accordion-content-enter-active {
+  height: var(--content-height);
+  transition: height 0.3s ease;
+}
+
+.accordion-content-exit {
+  height: var(--content-height);
+}
+
+.accordion-content-exit-active {
+  height: 0;
+  transition: height 0.3s ease;
+}
+
+/* Project card hover effects */
+.project-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  border-color: var(--primary);
+}
+
+/* Shine effect for links */
+.shine-effect {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  z-index: 1;
+}
+
+.shine-effect::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -60%;
+  width: 20%;
+  height: 200%;
+  opacity: 0;
+  transform: rotate(30deg);
+  background: rgba(255, 255, 255, 0.13);
+  background: linear-gradient(
+    to right, 
+    rgba(255, 255, 255, 0.13) 0%,
+    rgba(255, 255, 255, 0.13) 77%,
+    rgba(255, 255, 255, 0.5) 92%,
+    rgba(255, 255, 255, 0.0) 100%
+  );
+  z-index: -1;
+}
+
+.shine-effect:hover::after {
+  opacity: 1;
+  left: 130%;
+  transition: left 0.7s ease-in-out;
+}
+
+/* Pulse animation for GitHub icon */
+@keyframes pulse-light {
+  0% {
+    box-shadow: 0 0 0 0 rgba(var(--primary-rgb), 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(var(--primary-rgb), 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(var(--primary-rgb), 0);
+  }
+}
+
+.pulse-animation {
+  animation: pulse-light 2s infinite;
+}
+
+/* Smooth scale animation */
+@keyframes smoothScale {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.animate-smooth-scale {
+  animation: smoothScale 3s infinite ease-in-out;
+}
+
 /* Animation cho scroll down */
 @keyframes scroll-down-arrow {
   0% { transform: translateY(0); opacity: 0.8; }
@@ -227,4 +355,55 @@
   stroke-dasharray: 1;
   stroke-dashoffset: 1;
   animation: draw-path 2.5s forwards ease-in-out;
+}
+
+/* Responsive breakpoints */
+/* Mobile First Approach */
+/* xs: 0-639px (default) */
+/* sm: 640px-767px */
+/* md: 768px-1023px */
+/* lg: 1024px-1279px */
+/* xl: 1280px-1535px */
+/* 2xl: 1536px and up */
+
+/* Media queries cho các thiết bị khác nhau */
+@media (max-width: 639px) {
+  /* Mobile styles */
+  html {
+    font-size: 14px;
+  }
+  
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  .path-animation {
+    animation-duration: 2s;
+  }
+}
+
+@media (min-width: 640px) and (max-width: 767px) {
+  /* Small tablets */
+  html {
+    font-size: 15px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  /* Tablets */
+  .container {
+    max-width: 90%;
+  }
+}
+
+@media (min-width: 1024px) {
+  /* Desktop */
+  html {
+    font-size: 16px;
+  }
+  
+  .container {
+    max-width: 1140px;
+  }
 }

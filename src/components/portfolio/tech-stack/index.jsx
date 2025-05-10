@@ -23,6 +23,19 @@ function Skill({ skill, isDarkMode }) {
     );
 }
 
+function ArchitectureItem({ name, description }) {
+    return (
+        <div className="px-3 py-1.5 rounded-md border border-d-grid bg-card hover:bg-card/80 transition-colors">
+            <div className="font-medium text-sm text-foreground">{name}</div>
+            {description && (
+                <div className="text-xs text-muted-foreground mt-1">
+                    {description}
+                </div>
+            )}
+        </div>
+    );
+}
+
 function SkillGroup({ title, items, isDarkMode }) {
     if (!items || items.length === 0) return null;
 
@@ -40,10 +53,30 @@ function SkillGroup({ title, items, isDarkMode }) {
     );
 }
 
+function ArchitectureGroup({ title, items }) {
+    if (!items || items.length === 0) return null;
+
+    return (
+        <div className="my-4">
+            <h3 className="text-base font-medium text-foreground mb-2">
+                {title}
+            </h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2">
+                {items.map((item, index) => (
+                    <ArchitectureItem
+                        key={index}
+                        name={item.name}
+                        description={item.description}
+                    />
+                ))}
+            </div>
+        </div>
+    );
+}
+
 export default function TechStackSection({ isDarkMode }) {
     const { language } = useLanguage();
     const ui = ME.ui[language];
-    
 
     return (
         <section
@@ -54,10 +87,30 @@ export default function TechStackSection({ isDarkMode }) {
                 {ui.skills}
             </h2>
             <div className="space-y-0">
-                <SkillGroup title={ui.programmingSkills} items={ME.skills} isDarkMode={isDarkMode} />
-                <SkillGroup title={ui.libraries} items={ME.libraries} isDarkMode={isDarkMode} />
-                <SkillGroup title={ui.tools} items={ME.tools} isDarkMode={isDarkMode} />
-                <SkillGroup title={ui.databases} items={ME.databases} isDarkMode={isDarkMode} />
+                <SkillGroup
+                    title={ui.programmingSkills}
+                    items={ME.skills}
+                    isDarkMode={isDarkMode}
+                />
+                <SkillGroup
+                    title={ui.libraries}
+                    items={ME.libraries}
+                    isDarkMode={isDarkMode}
+                />
+                <SkillGroup
+                    title={ui.tools}
+                    items={ME.tools}
+                    isDarkMode={isDarkMode}
+                />
+                <SkillGroup
+                    title={ui.databases}
+                    items={ME.databases}
+                    isDarkMode={isDarkMode}
+                />
+                <ArchitectureGroup
+                    title={ui.architectures}
+                    items={ME.architectures}
+                />
             </div>
         </section>
     );

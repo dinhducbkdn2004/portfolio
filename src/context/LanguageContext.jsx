@@ -8,16 +8,21 @@ export function LanguageProvider({ children }) {
     const [isMounted, setIsMounted] = useState(false);
 
     useEffect(() => {
-        setIsMounted(true);
-        const storedLanguage = localStorage.getItem('language') || 'vi';
-        setLanguage(storedLanguage);
-        document.documentElement.setAttribute('lang', storedLanguage);
+        // Chỉ đọc localStorage ở phía client
+        if (typeof window !== 'undefined') {
+            setIsMounted(true);
+            const storedLanguage = localStorage.getItem('language') || 'vi';
+            setLanguage(storedLanguage);
+            document.documentElement.setAttribute('lang', storedLanguage);
+        }
     }, []);
 
     const toggleLanguage = () => {
         const newLanguage = language === 'vi' ? 'en' : 'vi';
         setLanguage(newLanguage);
-        localStorage.setItem('language', newLanguage);
+        if (typeof window !== 'undefined') {
+            localStorage.setItem('language', newLanguage);
+        }
         document.documentElement.setAttribute('lang', newLanguage);
     };
 
