@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import LinePattern from '../../components/patterns/LinePattern';
 import AboutSection from '../../components/portfolio/about';
-import ExperienceSection from '../../components/portfolio/experience';
 import Footer from '../../components/portfolio/footer';
 import OverviewSection from '../../components/portfolio/overview';
 import PanelSection from '../../components/portfolio/panel';
@@ -99,11 +98,6 @@ export default function Home() {
             <AnimatedSection delay={300} animation="slide-in">
                 <LinePattern className="relative h-4" />
                 <TechStackSection isDarkMode={isDarkMode} />
-            </AnimatedSection>
-
-            <AnimatedSection delay={400} animation="zoom-in">
-                <LinePattern className="relative h-4" />
-                <ExperienceSection />
             </AnimatedSection>
 
             <AnimatedSection delay={500} animation="fade-up">

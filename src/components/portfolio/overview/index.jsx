@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { MapPin, Phone, Mail } from 'lucide-react';
+import { MapPin, Phone, Mail, Target } from 'lucide-react';
 import ME from '../../../static/data/me';
 import { useLanguage } from '../../../context/LanguageContext';
 
 function OverviewLine({ icon, content }) {
     return (
         <div className="flex items-center space-x-2">
-            <span className="text-muted-foreground">{icon}</span>
+            <span className="text-muted-foreground flex-shrink-0">{icon}</span>
             <span className="text-foreground">{content}</span>
         </div>
     );
@@ -18,7 +18,7 @@ function ContactLine({ icon, content, href }) {
             href={href}
             className="flex items-center space-x-2 hover:text-primary transition-colors"
         >
-            <span className="text-muted-foreground">{icon}</span>
+            <span className="text-muted-foreground flex-shrink-0">{icon}</span>
             <span className="text-foreground">{content}</span>
         </a>
     );
@@ -26,6 +26,7 @@ function ContactLine({ icon, content, href }) {
 
 export default function OverviewSection({ isDarkMode }) {
     const { language } = useLanguage();
+    const ui = ME.ui[language];
     const [roleIndex, setRoleIndex] = useState(0);
     const [visible, setVisible] = useState(true);
     const [isFlipped, setIsFlipped] = useState(false);
@@ -89,47 +90,48 @@ export default function OverviewSection({ isDarkMode }) {
     return (
         <section
             id="overview"
-            className="flex flex-row items-center pt-12 mx-auto max-w-4xl border-x border-d-grid p-4 space-y-3 screen-line-before screen-line-after"
+            className="flex flex-col mx-auto max-w-4xl border-x border-d-grid p-4 md:p-6 screen-line-before screen-line-after"
         >
-            <div className="flex items-center space-x-2">
-                <div
-                    style={flipStyles.container}
-                    onMouseEnter={() => setIsFlipped(true)}
-                    onMouseLeave={() => setIsFlipped(false)}
-                >
-                    <div style={flipStyles.inner}>
-                        <img
-                            src={ME.avatar}
-                            alt="avatar"
-                            style={flipStyles.front}
-                        />
-                        <img
-                            src={ME.avatar2}
-                            alt="avatar 2"
-                            style={flipStyles.back}
-                        />
+            <div className="flex flex-col md:flex-row items-center pt-8 pb-4 relative">
+                <div className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-4">
+                    <div
+                        style={flipStyles.container}
+                        onMouseEnter={() => setIsFlipped(true)}
+                        onMouseLeave={() => setIsFlipped(false)}
+                        className="mx-auto md:mx-0"
+                    >
+                        <div style={flipStyles.inner}>
+                            <img
+                                src={ME.avatar}
+                                alt="avatar"
+                                style={flipStyles.front}
+                            />
+                            <img
+                                src={ME.avatar2}
+                                alt="avatar 2"
+                                style={flipStyles.back}
+                            />
+                        </div>
+                    </div>
+                    <div className="text-center md:text-left">
+                        <h1 className="text-3xl font-bold text-foreground">
+                            {ME.name}
+                        </h1>
+                        <div className="h-6 overflow-hidden">
+                            <p
+                                className={`text-md text-muted-foreground transition-all duration-500 transform
+                                ${
+                                    visible
+                                        ? 'translate-y-0 opacity-100'
+                                        : 'translate-y-0 opacity-0'
+                                }`}
+                            >
+                                {roles[roleIndex]}
+                            </p>
+                        </div>
                     </div>
                 </div>
-                <div>
-                    <h1 className="text-3xl font-bold text-foreground">
-                        {ME.name}
-                    </h1>
-                    <div className="h-6 overflow-hidden">
-                        <p
-                            className={`text-md text-muted-foreground transition-all duration-500 transform
-                            ${
-                                visible
-                                    ? 'translate-y-0 opacity-100'
-                                    : 'translate-y-0 opacity-0'
-                            }`}
-                        >
-                            {roles[roleIndex]}
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div className="relative flex-1 text-sm h-full">
-                <div className="flex flex-col space-y-1 absolute top-1 right-0">
+                <div className="mt-6 md:mt-0 md:absolute md:top-8 md:right-0 flex flex-col space-y-2">
                     <OverviewLine
                         icon={<MapPin size={16} />}
                         content={language === 'vi' ? ME.address : ME.addressEn}
@@ -145,7 +147,10 @@ export default function OverviewSection({ isDarkMode }) {
                         href={`mailto:${ME.email}`}
                     />
                 </div>
-                <div className="flex flex-row items-center gap-2 absolute bottom-2 right-11">
+            </div>
+
+            <div className="flex justify-center md:justify-end mb-6 mt-2">
+                <div className="flex flex-row items-center gap-2">
                     <span className="text-sm text-muted-foreground">
                         Contact me:
                     </span>
@@ -168,6 +173,22 @@ export default function OverviewSection({ isDarkMode }) {
                             />
                         </a>
                     ))}
+                </div>
+            </div>
+
+            <div className="w-full mt-2 pt-6 border-t border-d-grid">
+                <div className="flex items-start space-x-2">
+                    <span className="text-muted-foreground pt-1 flex-shrink-0">
+                        <Target size={18} />
+                    </span>
+                    <div>
+                        <h3 className="text-base font-medium text-foreground mb-1">
+                            {ui.objective}
+                        </h3>
+                        <p className="text-sm text-muted-foreground">
+                            {language === 'vi' ? ME.about : ME.aboutEn}
+                        </p>
+                    </div>
                 </div>
             </div>
         </section>

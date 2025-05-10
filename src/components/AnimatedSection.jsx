@@ -1,6 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react';
 
-export default function AnimatedSection({ children, delay = 0, animation = 'fade-up' }) {
+export default function AnimatedSection({
+    children,
+    delay = 0,
+    animation = 'fade-up',
+}) {
     const [isVisible, setIsVisible] = useState(false);
     const sectionRef = useRef(null);
 
@@ -13,7 +17,8 @@ export default function AnimatedSection({ children, delay = 0, animation = 'fade
                         setIsVisible(true);
                     }, delay);
                     // Ngừng quan sát sau khi đã hiển thị
-                    if (sectionRef.current) observer.unobserve(sectionRef.current);
+                    if (sectionRef.current)
+                        observer.unobserve(sectionRef.current);
                 }
             },
             {
@@ -36,9 +41,11 @@ export default function AnimatedSection({ children, delay = 0, animation = 'fade
 
     // Các animation class
     const animationClasses = {
-        'fade-up': 'opacity-0 translate-y-10 transition-all duration-700 ease-out',
+        'fade-up':
+            'opacity-0 translate-y-10 transition-all duration-700 ease-out',
         'fade-in': 'opacity-0 transition-opacity duration-700 ease-out',
-        'slide-in': 'opacity-0 -translate-x-10 transition-all duration-700 ease-out',
+        'slide-in':
+            'opacity-0 -translate-x-10 transition-all duration-700 ease-out',
         'zoom-in': 'opacity-0 scale-95 transition-all duration-700 ease-out',
     };
 
@@ -52,7 +59,9 @@ export default function AnimatedSection({ children, delay = 0, animation = 'fade
     return (
         <div
             ref={sectionRef}
-            className={`${animationClasses[animation]} ${isVisible ? visibleClasses[animation] : ''}`}
+            className={`${animationClasses[animation]} ${
+                isVisible ? visibleClasses[animation] : ''
+            }`}
         >
             {children}
         </div>
