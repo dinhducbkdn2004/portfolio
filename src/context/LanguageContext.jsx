@@ -8,7 +8,6 @@ export function LanguageProvider({ children }) {
     const [isMounted, setIsMounted] = useState(false);
 
     useEffect(() => {
-        // Chỉ đọc localStorage ở phía client
         if (typeof window !== 'undefined') {
             setIsMounted(true);
             const storedLanguage = localStorage.getItem('language') || 'vi';

@@ -21,7 +21,7 @@ function EducationCard({ education, language, index }) {
             {/* Card với hiệu ứng hover */}
             <div className="rounded-lg border border-d-grid p-4 transition-all duration-500 bg-card/40 backdrop-blur-sm hover:shadow-md hover:bg-card/70 hover:border-primary/30 project-card">
                 {/* School name với icon và hiệu ứng */}
-                <div className="flex items-center mb-3 group-hover:text-primary transition-colors">
+                <div className="flex items-center mb-3 group-hover:text-primary transition-colors justify-center md:justify-start">
                     <BookOpen size={18} className="flex-shrink-0 mr-2" />
                     <h3 className="font-medium">
                         {language === 'vi'
@@ -31,7 +31,7 @@ function EducationCard({ education, language, index }) {
                 </div>
 
                 {/* Period với hiệu ứng */}
-                <div className="flex items-center text-sm text-muted-foreground mb-2">
+                <div className="flex items-center text-sm text-muted-foreground mb-2 justify-center md:justify-start">
                     <Calendar size={14} className="flex-shrink-0 mr-2" />
                     <span>
                         {language === 'vi'
@@ -40,25 +40,28 @@ function EducationCard({ education, language, index }) {
                     </span>
                 </div>
 
-                {/* Major với hiệu ứng */}
-                <div className="px-3 py-1.5 rounded-md border border-d-grid bg-background/50 mb-3 inline-block text-sm font-medium transition-all duration-300 hover:bg-primary/10 hover:border-primary/30">
-                    {language === 'vi' ? education.major : education.majorEn}
-                </div>
+                {/* Major và GPA div bọc ngoài để căn giữa trên mobile */}
+                <div className="flex flex-wrap gap-2 justify-center md:justify-start mb-3">
+                    {/* Major với hiệu ứng */}
+                    <div className="px-3 py-1.5 rounded-md border border-d-grid bg-background/50 inline-block text-sm font-medium transition-all duration-300 hover:bg-primary/10 hover:border-primary/30">
+                        {language === 'vi' ? education.major : education.majorEn}
+                    </div>
 
-                {/* GPA với hiệu ứng */}
-                <div className="px-3 py-1.5 rounded-md border border-d-grid bg-background/50 mb-3 inline-block text-sm font-medium ml-2 transition-all duration-300 hover:bg-primary/10 hover:border-primary/30">
-                    {language === 'vi' ? 'GPA: ' : 'GPA: '}
-                    <span className="text-primary">{education.gpa}</span>
+                    {/* GPA với hiệu ứng */}
+                    <div className="px-3 py-1.5 rounded-md border border-d-grid bg-background/50 inline-block text-sm font-medium transition-all duration-300 hover:bg-primary/10 hover:border-primary/30">
+                        {language === 'vi' ? 'GPA: ' : 'GPA: '}
+                        <span className="text-primary">{education.gpa}</span>
+                    </div>
                 </div>
 
                 {/* Description với hiệu ứng */}
                 <div className="text-sm text-muted-foreground">
-                    <div className="flex items-start">
+                    <div className="flex items-start justify-center md:justify-start">
                         <BookText
                             size={14}
                             className="flex-shrink-0 mr-2 mt-1"
                         />
-                        <p>
+                        <p className="text-center md:text-left">
                             {language === 'vi'
                                 ? education.description
                                 : education.descriptionEn}
@@ -74,7 +77,7 @@ function EducationCard({ education, language, index }) {
             </div>
 
             {/* Decorative vertical line with animation */}
-            <div className="absolute left-4 top-[4.5rem] bottom-8 w-px bg-gradient-to-b from-primary/50 via-d-border to-transparent animate-pulse"></div>
+            <div className="absolute left-4 top-[4.5rem] bottom-8 w-px bg-gradient-to-b from-primary/50 via-d-border to-transparent animate-pulse md:block hidden"></div>
         </div>
     );
 }
@@ -89,9 +92,9 @@ export default function AboutSection() {
             className="mx-auto max-w-4xl border-x border-d-grid p-4 space-y-6 screen-line-before screen-line-after"
         >
             {/* Thông tin cá nhân */}
-            <h2 className="text-2xl font-bold text-foreground">{ui.about}</h2>
+            <h2 className="text-2xl font-bold text-foreground text-center md:text-left">{ui.about}</h2>
             <div className="prose text-foreground max-w-none">
-                <p className="text-muted-foreground">
+                <p className="text-muted-foreground text-center md:text-left">
                     {language === 'vi' ? ME.personalInfo : ME.personalInfoEn}
                 </p>
             </div>
@@ -101,7 +104,7 @@ export default function AboutSection() {
                 className="mt-8 animate-fadeIn"
                 style={{ animationDelay: '100ms' }}
             >
-                <h2 className="text-2xl font-bold text-foreground flex items-center">
+                <h2 className="text-2xl font-bold text-foreground flex items-center justify-center md:justify-start">
                     <GraduationCap size={24} className="mr-2 text-primary" />
                     {ui.education}
                 </h2>
