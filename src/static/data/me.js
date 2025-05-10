@@ -4,6 +4,7 @@ const ME = {
     avatar2: '/image/me-2.jpg',
     role: 'Frontend Developer',
     address: 'Đà Nẵng, Việt Nam',
+    cvPath: '/cv/DINH-DUC.pdf',
     socials: [
         {
             icon: '/external/facebook.svg',
@@ -260,6 +261,7 @@ const ME = {
             education: 'Học vấn',
             moreProjects:
                 'Còn nhiều dự án khác nữa, kiểm tra trên GitHub của tôi',
+            downloadCV: 'Tải CV',
         },
         en: {
             overview: 'Overview',
@@ -286,6 +288,7 @@ const ME = {
             less: 'Hide details',
             education: 'Education',
             moreProjects: 'See more projects on my GitHub',
+            downloadCV: 'Download CV',
         },
     },
 };

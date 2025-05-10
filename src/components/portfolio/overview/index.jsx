@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { MapPin, Phone, Mail, Target } from 'lucide-react';
+import { MapPin, Phone, Mail, Target, Download } from 'lucide-react';
 import ME from '../../../static/data/me';
 import { useLanguage } from '../../../context/LanguageContext';
 
 function OverviewLine({ icon, content }) {
     return (
-        <div className="flex items-center space-x-2">
+        <div className="flex items-center space-x-2 justify-center md:justify-start">
             <span className="text-muted-foreground flex-shrink-0">{icon}</span>
             <span className="text-foreground">{content}</span>
         </div>
@@ -16,7 +16,7 @@ function ContactLine({ icon, content, href }) {
     return (
         <a
             href={href}
-            className="flex items-center space-x-2 hover:text-primary transition-colors"
+            className="flex items-center space-x-2 hover:text-primary transition-colors justify-center md:justify-start"
         >
             <span className="text-muted-foreground flex-shrink-0">{icon}</span>
             <span className="text-foreground">{content}</span>
@@ -131,7 +131,7 @@ export default function OverviewSection({ isDarkMode }) {
                         </div>
                     </div>
                 </div>
-                <div className="mt-6 md:mt-0 md:absolute md:top-8 md:right-0 flex flex-col space-y-2">
+                <div className="mt-6 md:mt-0 md:absolute md:top-8 md:right-0 flex flex-col space-y-2 w-full md:w-auto items-center md:items-start">
                     <OverviewLine
                         icon={<MapPin size={16} />}
                         content={language === 'vi' ? ME.address : ME.addressEn}
@@ -149,8 +149,8 @@ export default function OverviewSection({ isDarkMode }) {
                 </div>
             </div>
 
-            <div className="flex justify-center md:justify-end mb-6 mt-2">
-                <div className="flex flex-row items-center gap-2">
+            <div className="flex justify-center mb-6 mt-2">
+                <div className="flex flex-row items-center gap-2 flex-wrap justify-center">
                     <span className="text-sm text-muted-foreground">
                         Contact me:
                     </span>
@@ -173,15 +173,24 @@ export default function OverviewSection({ isDarkMode }) {
                             />
                         </a>
                     ))}
+                    <a
+                        className="flex items-center justify-center gap-1 px-2.5 py-1 text-xs font-medium rounded-full bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300 hover:scale-110"
+                        href={ME.cvPath}
+                        download
+                        title={ui.downloadCV}
+                    >
+                        <Download size={14} />
+                        <span>{ui.downloadCV}</span>
+                    </a>
                 </div>
             </div>
 
             <div className="w-full mt-2 pt-6 border-t border-d-grid">
-                <div className="flex items-start space-x-2">
-                    <span className="text-muted-foreground pt-1 flex-shrink-0">
+                <div className="flex flex-col md:flex-row items-center md:items-start md:space-x-2">
+                    <span className="text-muted-foreground mb-2 md:mb-0 md:pt-1 flex-shrink-0">
                         <Target size={18} />
                     </span>
-                    <div>
+                    <div className="text-center md:text-left">
                         <h3 className="text-base font-medium text-foreground mb-1">
                             {ui.objective}
                         </h3>
