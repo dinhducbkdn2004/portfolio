@@ -2,7 +2,7 @@ const ME = {
     name: 'Định Đức',
     avatar: '/image/me.jpg',
     avatar2: '/image/me-2.jpg',
-    role: 'Frontend Developer',
+    role: 'Web Developer',
     address: 'Đà Nẵng, Việt Nam',
     cvPath: '/cv/DINH-DUC.pdf',
     socials: [
@@ -26,13 +26,13 @@ const ME = {
     addressEn: 'Da Nang, Vietnam',
     phoneNumber: '+84 779 488 960',
     email: 'dinhducbkdn2004@gmail.com',
-    about: 'Tìm kiếm vị trí Frontend Developer với React JS để tận dụng kinh nghiệm của tôi với các công nghệ web hiện đại bao gồm React, Redux và Tailwind CSS. Đam mê tạo ra các giao diện thân thiện với người dùng và phản hồi nhanh với sự tập trung mạnh mẽ vào tối ưu hóa hiệu suất và các nguyên tắc UI/UX hiện đại.',
+    about: 'Là một lập trình viên Front-end đang trên hành trình phát triển sự nghiệp, tôi mong muốn tìm kiếm cơ hội thực tập để áp dụng và mở rộng kỹ năng xây dựng giao diện web phản hồi tốt, trực quan và thu hút bằng React cùng các công nghệ web hiện đại. Tôi luôn háo hức được đóng góp vào các dự án thực tế, cải thiện trải nghiệm người dùng và phát triển bản thân trong một môi trường làm việc năng động và hợp tác.',
     aboutEn:
-        'Seeking a Front-end React JS position to leverage my experience with modern web technologies including React, Redux, and Tailwind CSS. Passionate about creating responsive and user-friendly interfaces with a strong focus on performance optimization and modern UI/UX principles.',
+        'Aspiring Front-end Developer seeking an internship to apply and expand my skills in creating responsive, intuitive, and visually engaging web interfaces using React and modern web technologies. Enthusiastic about contributing to real-world projects, improving user experience, and growing within a collaborative, fast-paced development environment. ',
     personalInfo:
-        'Là một sinh viên năm 2 Đại học Bách Khoa Đà Nẵng đang theo học ngành Công nghệ thông tin. Tôi có niềm đam mê mạnh mẽ với công nghệ, đặc biệt là phát triển website. Tôi thích học hỏi các framework và công nghệ mới, luôn tìm cách cải thiện kỹ năng lập trình và thiết kế giao diện.',
+        'Là một sinh viên năm 3 Đại học Bách Khoa Đà Nẵng đang theo học ngành Công nghệ thông tin. Tôi có niềm đam mê mạnh mẽ với công nghệ, đặc biệt là phát triển website. Tôi thích học hỏi các framework và công nghệ mới, luôn tìm cách cải thiện kỹ năng lập trình và thiết kế giao diện.',
     personalInfoEn:
-        'I am a second-year student at Da Nang University of Science and Technology, majoring in Information Technology. I have a strong passion for technology, especially web development. I enjoy learning new frameworks and technologies, always looking for ways to improve my programming and interface design skills.',
+        'I am a third-year student at Da Nang University of Science and Technology, majoring in Information Technology. I have a strong passion for technology, especially web development. I enjoy learning new frameworks and technologies, always looking for ways to improve my programming and interface design skills.',
     education: [
         {
             school: 'Đại học Bách Khoa Đà Nẵng',
@@ -49,9 +49,9 @@ const ME = {
         },
     ],
     skills: [
+        { name: 'JavaScript', icon: '/tech-stack/javascript.svg' },
         { name: 'HTML', icon: '/tech-stack/html.svg' },
         { name: 'CSS/SCSS', icon: '/tech-stack/css.svg' },
-        { name: 'JavaScript', icon: '/tech-stack/javascript.svg' },
         { name: 'Java', icon: '/tech-stack/java.svg' },
         { name: 'Python', icon: '/tech-stack/python.svg' },
     ],
@@ -59,12 +59,12 @@ const ME = {
         { name: 'React', icon: '/tech-stack/react.svg' },
         { name: 'Redux', icon: '/tech-stack/redux.svg' },
         { name: 'Tailwind CSS', icon: '/tech-stack/tailwindcss.svg' },
-        { name: 'Ant Design', icon: '/tech-stack/ant-design.svg' },
         { name: 'Material UI', icon: '/tech-stack/material-ui.svg' },
-        { name: 'jQuery', icon: '/tech-stack/jquery.svg' },
+        { name: 'Ant Design', icon: '/tech-stack/ant-design.svg' },
         { name: 'Bootstrap', icon: '/tech-stack/bootstrap.svg' },
-        { name: 'Socket.io', icon: '/tech-stack/socket-io.svg' },
         { name: 'Node.js', icon: '/tech-stack/nodejs.svg' },
+        { name: 'Socket.io', icon: '/tech-stack/socket-io.svg' },
+        { name: 'jQuery', icon: '/tech-stack/jquery.svg' },
     ],
     tools: [
         { name: 'Git', icon: '/tech-stack/git.svg' },
@@ -74,11 +74,11 @@ const ME = {
             iconDark: '/tech-stack/github-dark.svg',
         },
         { name: 'Visual Studio Code', icon: '/tech-stack/vs-code.svg' },
-        { name: 'Postman', icon: '/tech-stack/postman.svg' },
-        { name: 'Figma', icon: '/tech-stack/figma.svg' },
-        { name: 'Firebase', icon: '/tech-stack/firebase.svg' },
         { name: 'Vite', icon: '/vite.svg' },
         { name: 'Docker', icon: '/tech-stack/docker.svg' },
+        { name: 'Firebase', icon: '/tech-stack/firebase.svg' },
+        { name: 'Postman', icon: '/tech-stack/postman.svg' },
+        { name: 'Figma', icon: '/tech-stack/figma.svg' },
         { name: 'npm/yarn', icon: '/tech-stack/npm.svg' },
         { name: 'Trello', icon: '/tech-stack/trello.svg' },
     ],
@@ -162,6 +162,7 @@ const ME = {
                 'Handled error management and implemented testing to ensure product quality',
             ],
             link: 'https://emd.ducbkdn.space/',
+            github: 'https://github.com/dinhducbkdn2004/face-emotion-detection',
         },
         {
             name: 'Web Chat & Video Call Realtime - Connectica',
@@ -230,6 +231,12 @@ const ME = {
                 'Collaborated with team members on feature integration and bug fixing',
             ],
             link: 'https://ducbkdn.space/',
+            github: {
+                frontend:
+                    'https://github.com/dinhducbkdn2004/pbl4-video-chat-fe',
+                backend:
+                    'https://github.com/dinhducbkdn2004/pbl4-video-chat-be',
+            },
         },
     ],
 
