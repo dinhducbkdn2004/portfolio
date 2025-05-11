@@ -18,7 +18,7 @@ function ContactLine({ icon, content, href }) {
             href={href}
             className="flex items-center space-x-2 hover:text-primary transition-colors"
         >
-            <span className="text-muted-foreground">{icon}</span>
+            <span className="text-muted-foreground ">{icon}</span>
             <span className="text-foreground">{content}</span>
         </a>
     );

@@ -67,16 +67,23 @@ function ProjectCard({ project, language, isOpen, onToggle }) {
                 </button>
             </div>
 
-            <div 
+            <div
                 className="overflow-hidden transition-all relative"
-                style={{ 
+                style={{
                     height: contentHeight,
                     opacity: isOpen ? 1 : 0,
-                    transition: 'height var(--animation-duration-medium) var(--animation-timing), opacity var(--animation-duration-medium) var(--animation-timing)'
+                    transition:
+                        'height var(--animation-duration-medium) var(--animation-timing), opacity var(--animation-duration-medium) var(--animation-timing)',
                 }}
             >
-                <div ref={contentRef} className="space-y-4 border-t border-d-grid pt-3 mt-2">
-                    <div className="animate-fadeIn" style={{ animationDelay: '100ms' }}>
+                <div
+                    ref={contentRef}
+                    className="space-y-4 border-t border-d-grid pt-3 mt-2"
+                >
+                    <div
+                        className="animate-fadeIn"
+                        style={{ animationDelay: '100ms' }}
+                    >
                         <h4 className="font-medium text-sm mb-2">{ui.role}</h4>
                         <p className="text-sm text-muted-foreground">
                             {project.role}
@@ -84,7 +91,10 @@ function ProjectCard({ project, language, isOpen, onToggle }) {
                     </div>
 
                     {project.features && (
-                        <div className="animate-fadeIn" style={{ animationDelay: '200ms' }}>
+                        <div
+                            className="animate-fadeIn"
+                            style={{ animationDelay: '200ms' }}
+                        >
                             <h4 className="font-medium text-sm mb-2">
                                 {ui.features}
                             </h4>
@@ -105,7 +115,10 @@ function ProjectCard({ project, language, isOpen, onToggle }) {
                     )}
 
                     {project.responsibilities && (
-                        <div className="animate-fadeIn" style={{ animationDelay: '300ms' }}>
+                        <div
+                            className="animate-fadeIn"
+                            style={{ animationDelay: '300ms' }}
+                        >
                             <h4 className="font-medium text-sm mb-2">
                                 {ui.responsibilities}
                             </h4>
@@ -126,7 +139,10 @@ function ProjectCard({ project, language, isOpen, onToggle }) {
                     )}
 
                     {project.link && (
-                        <div className="pt-4 pb-2 animate-fadeIn z-10 relative" style={{ animationDelay: '400ms' }}>
+                        <div
+                            className="pt-4 pb-2 animate-fadeIn z-10 relative flex items-center gap-3"
+                            style={{ animationDelay: '400ms' }}
+                        >
                             <a
                                 href={project.link}
                                 target="_blank"
@@ -136,6 +152,46 @@ function ProjectCard({ project, language, isOpen, onToggle }) {
                                 {ui.viewProject}
                                 <ExternalLink size={14} className="ml-1.5" />
                             </a>
+
+                            {project.github &&
+                                (typeof project.github === 'string' ? (
+                                    <a
+                                        href={project.github}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="inline-flex items-center text-sm px-4 py-2 rounded-md bg-background border border-d-grid hover:bg-card transition-all duration-300 shine-effect"
+                                    >
+                                        <Github size={14} className="mr-1.5" />
+                                        <span>GitHub</span>
+                                    </a>
+                                ) : (
+                                    <div className="flex gap-2">
+                                        <a
+                                            href={project.github.frontend}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="inline-flex items-center text-sm px-3 py-2 rounded-md bg-background border border-d-grid hover:bg-card transition-all duration-300 shine-effect"
+                                        >
+                                            <Github
+                                                size={14}
+                                                className="mr-1.5"
+                                            />
+                                            <span>Frontend</span>
+                                        </a>
+                                        <a
+                                            href={project.github.backend}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="inline-flex items-center text-sm px-3 py-2 rounded-md bg-background border border-d-grid hover:bg-card transition-all duration-300 shine-effect"
+                                        >
+                                            <Github
+                                                size={14}
+                                                className="mr-1.5"
+                                            />
+                                            <span>Backend</span>
+                                        </a>
+                                    </div>
+                                ))}
                         </div>
                     )}
                 </div>

@@ -7,7 +7,7 @@ function OverviewLine({ icon, content }) {
     return (
         <div className="flex items-center space-x-2 justify-center md:justify-start">
             <span className="text-muted-foreground flex-shrink-0">{icon}</span>
-            <span className="text-foreground">{content}</span>
+            <span className="text-foreground text-sm">{content}</span>
         </div>
     );
 }
@@ -19,7 +19,7 @@ function ContactLine({ icon, content, href }) {
             className="flex items-center space-x-2 hover:text-primary transition-colors justify-center md:justify-start"
         >
             <span className="text-muted-foreground flex-shrink-0">{icon}</span>
-            <span className="text-foreground">{content}</span>
+            <span className="text-foreground text-sm">{content}</span>
         </a>
     );
 }
@@ -30,7 +30,7 @@ export default function OverviewSection({ isDarkMode }) {
     const [roleIndex, setRoleIndex] = useState(0);
     const [visible, setVisible] = useState(true);
     const [isFlipped, setIsFlipped] = useState(false);
-    const roles = ['Frontend Developer', 'Software Engineer', 'Web Developer'];
+    const roles = ['Web Developer', 'Frontend Developer', 'Software Engineer'];
 
     useEffect(() => {
         const fadeTimeout = setInterval(() => {

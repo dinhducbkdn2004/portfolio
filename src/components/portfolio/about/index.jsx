@@ -94,7 +94,7 @@ export default function AboutSection() {
             {/* Thông tin cá nhân */}
             <h2 className="text-2xl font-bold text-foreground text-center md:text-left">{ui.about}</h2>
             <div className="prose text-foreground max-w-none">
-                <p className="text-muted-foreground text-center md:text-left">
+                <p className="text-muted-foreground text-center md:text-left text-sm">
                     {language === 'vi' ? ME.personalInfo : ME.personalInfoEn}
                 </p>
             </div>
