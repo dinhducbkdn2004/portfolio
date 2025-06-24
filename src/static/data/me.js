@@ -39,7 +39,7 @@ const ME = {
             schoolEn: 'Da Nang University of Science and Technology',
             major: 'Công nghệ thông tin đặc thù hợp tác doanh nghiệp.',
             majorEn: 'Information Technology for Business Cooperation.',
-            gpa: '3.39/4',
+            gpa: '3.48/4',
             period: '2022 - Hiện tại',
             periodEn: '2022 - Present',
             description:
