@@ -1,5 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { MapPin, Phone, Mail, Target, Download } from 'lucide-react';
+import {
+    MapPin,
+    Phone,
+    Mail,
+    Target,
+    Download,
+    ChevronDown,
+} from 'lucide-react';
 import ME from '../../../static/data/me';
 import { useLanguage } from '../../../context/LanguageContext';
 
@@ -30,6 +37,7 @@ export default function OverviewSection({ isDarkMode }) {
     const [roleIndex, setRoleIndex] = useState(0);
     const [visible, setVisible] = useState(true);
     const [isFlipped, setIsFlipped] = useState(false);
+    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
     const roles = ['Web Developer', 'Frontend Developer', 'Software Engineer'];
 
     useEffect(() => {
@@ -173,15 +181,42 @@ export default function OverviewSection({ isDarkMode }) {
                             />
                         </a>
                     ))}
-                    <a
-                        className="flex items-center justify-center gap-1 px-2.5 py-1 text-xs font-medium rounded-full bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300 hover:scale-110"
-                        href={ME.cvPath}
-                        download
-                        title={ui.downloadCV}
-                    >
-                        <Download size={14} />
-                        <span>{ui.downloadCV}</span>
-                    </a>
+                    <div className="relative">
+                        <button
+                            className="flex items-center justify-center gap-1 px-2.5 py-1 text-xs font-medium rounded-full bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300 hover:scale-110"
+                            onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                            title={ui.downloadCV}
+                        >
+                            <Download size={14} />
+                            <span>{ui.downloadCV}</span>
+                            <ChevronDown
+                                size={14}
+                                className={`ml-0.5 transition-transform duration-300 ${
+                                    isDropdownOpen ? 'rotate-180' : ''
+                                }`}
+                            />
+                        </button>
+                        {isDropdownOpen && (
+                            <div className="absolute top-full left-0 mt-1 w-32 bg-card border border-d-grid rounded-md shadow-lg py-1 z-50">
+                                <a
+                                    href={ME.cvPath.frontend}
+                                    download
+                                    className="block px-4 py-2 text-sm text-foreground hover:bg-primary hover:text-primary-foreground transition-colors"
+                                    onClick={() => setIsDropdownOpen(false)}
+                                >
+                                    Frontend
+                                </a>
+                                <a
+                                    href={ME.cvPath.backend}
+                                    download
+                                    className="block px-4 py-2 text-sm text-foreground hover:bg-primary hover:text-primary-foreground transition-colors"
+                                    onClick={() => setIsDropdownOpen(false)}
+                                >
+                                    Backend
+                                </a>
+                            </div>
+                        )}
+                    </div>
                 </div>
             </div>
 

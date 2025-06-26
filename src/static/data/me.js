@@ -4,7 +4,10 @@ const ME = {
     avatar2: '/image/me-2.jpg',
     role: 'Web Developer',
     address: 'Đà Nẵng, Việt Nam',
-    cvPath: '/cv/DINH-DUC.pdf',
+    cvPath: {
+        frontend: '/cv/Frontend_Intern_DINHDUC.pdf',
+        backend: '/cv/Backend_Intern_DINHDUC.pdf',
+    },
     socials: [
         {
             icon: '/external/facebook.svg',
