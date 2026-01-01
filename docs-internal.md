@@ -13,3 +13,4 @@
 - Update at 2026-03-16 13:11:40 - style: format code according to linting rules
 - Update at 2026-01-01 09:59:32 - style: format code according to linting rules
 - Update at 2026-01-01 17:54:04 - fix: resolve edge case in error handler
+- Update at 2026-01-01 12:26:50 - docs: clarify installation instructions
