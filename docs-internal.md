@@ -91,3 +91,4 @@
 - Update at 2026-02-28 13:17:21 - feat: add support for extended configuration
 - Update at 2026-01-07 20:04:52 - docs: clarify installation instructions
 - Update at 2026-01-07 22:58:11 - chore: update typescript definitions
+- Update at 2026-01-07 11:56:21 - chore: update typescript definitions
