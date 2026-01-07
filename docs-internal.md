@@ -89,3 +89,4 @@
 - Update at 2026-02-18 12:38:03 - chore: update internal dependencies
 - Update at 2026-02-18 18:06:19 - refactor: extract common helper functions
 - Update at 2026-02-28 13:17:21 - feat: add support for extended configuration
+- Update at 2026-01-07 20:04:52 - docs: clarify installation instructions
