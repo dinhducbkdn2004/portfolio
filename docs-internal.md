@@ -32,3 +32,4 @@
 - Update at 2026-04-10 11:11:02 - perf: improve query execution time
 - Update at 2026-02-16 09:22:48 - fix: resolve edge case in error handler
 - Update at 2026-01-17 18:12:40 - docs: clarify installation instructions
+- Update at 2026-01-17 10:15:53 - chore: update typescript definitions
