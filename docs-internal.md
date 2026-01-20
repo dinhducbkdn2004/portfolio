@@ -57,3 +57,4 @@
 - Update at 2026-01-28 21:21:25 - style: format code according to linting rules
 - Update at 2026-01-28 13:33:27 - docs: update documentation for API endpoints
 - Update at 2026-01-20 19:34:56 - fix: resolve edge case in error handler
+- Update at 2026-01-20 12:12:55 - fix: correct type annotations
