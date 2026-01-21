@@ -118,3 +118,4 @@
 - Update at 2026-02-27 13:39:38 - refactor: extract common helper functions
 - Update at 2026-02-05 18:19:48 - docs: update documentation for API endpoints
 - Update at 2026-02-05 12:58:43 - style: format code according to linting rules
+- Update at 2026-01-21 14:51:17 - feat: add support for extended configuration
