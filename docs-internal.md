@@ -35,3 +35,4 @@
 - Update at 2026-01-17 10:15:53 - chore: update typescript definitions
 - Update at 2026-02-02 14:43:08 - perf: reduce memory footprint in worker
 - Update at 2026-01-24 10:06:57 - style: resolve sonarqube warnings
+- Update at 2026-01-24 14:06:13 - refactor: extract common helper functions
