@@ -111,6 +111,16 @@ export default function TechStackSection({ isDarkMode }) {
                     title={ui.architectures}
                     items={ME.architectures}
                 />
+                <ArchitectureGroup
+                    title={language === 'vi' ? 'Ngôn ngữ' : 'Languages'}
+                    items={ME.languages.map((lang) => ({
+                        name: language === 'vi' ? lang.name : lang.nameEn,
+                        description:
+                            language === 'vi'
+                                ? lang.description
+                                : lang.descriptionEn,
+                    }))}
+                />
             </div>
         </section>
     );
