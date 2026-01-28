@@ -55,3 +55,4 @@
 - Update at 2026-01-11 10:36:19 - ci: update GitHub actions workflow
 - Update at 2026-02-07 10:03:18 - refactor: optimize data processing pipeline
 - Update at 2026-01-28 21:21:25 - style: format code according to linting rules
+- Update at 2026-01-28 13:33:27 - docs: update documentation for API endpoints
