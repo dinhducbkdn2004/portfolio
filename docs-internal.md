@@ -99,3 +99,4 @@
 - Update at 2026-01-14 14:02:01 - test: add unit tests for utility functions
 - Update at 2026-01-14 12:02:44 - perf: improve query execution time
 - Update at 2026-01-14 18:30:44 - perf: improve query execution time
+- Update at 2026-02-03 10:03:05 - refactor: extract common helper functions
