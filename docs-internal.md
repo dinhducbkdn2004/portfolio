@@ -116,3 +116,4 @@
 - Update at 2026-02-27 16:52:27 - docs: clarify installation instructions
 - Update at 2026-02-27 13:52:56 - style: resolve sonarqube warnings
 - Update at 2026-02-27 13:39:38 - refactor: extract common helper functions
+- Update at 2026-02-05 18:19:48 - docs: update documentation for API endpoints
