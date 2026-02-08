@@ -23,3 +23,4 @@
 - Update at 2026-03-27 20:34:31 - test: increase test coverage for edge cases
 - Update at 2026-04-16 10:28:21 - refactor: optimize data processing pipeline
 - Update at 2026-02-08 12:04:04 - refactor: clean up unused variables and imports
+- Update at 2026-02-08 16:29:25 - docs: clarify installation instructions
