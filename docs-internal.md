@@ -6,3 +6,4 @@
 - Update at 2026-04-05 12:45:11 - ci: update GitHub actions workflow
 - Update at 2026-01-08 11:51:04 - perf: implement caching for frequent queries
 - Update at 2026-01-08 13:34:02 - perf: implement caching for frequent queries
+- Update at 2026-02-22 20:52:43 - docs: update documentation for API endpoints
