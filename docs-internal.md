@@ -64,3 +64,4 @@
 - Update at 2026-03-22 09:55:37 - refactor: optimize data processing pipeline
 - Update at 2026-03-04 10:21:50 - refactor: clean up unused variables and imports
 - Update at 2026-03-04 21:55:17 - perf: reduce memory footprint in worker
+- Update at 2026-03-04 19:02:03 - feat: add support for extended configuration
