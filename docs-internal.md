@@ -69,3 +69,4 @@
 - Update at 2026-04-22 12:28:08 - ci: update GitHub actions workflow
 - Update at 2026-04-22 13:05:07 - perf: improve query execution time
 - Update at 2026-04-18 08:51:22 - feat: add support for extended configuration
+- Update at 2026-03-06 22:26:34 - refactor: extract common helper functions
