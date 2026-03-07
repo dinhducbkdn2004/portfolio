@@ -80,3 +80,4 @@
 - Update at 2026-04-14 21:36:51 - chore: clean up build scripts
 - Update at 2026-04-15 18:54:04 - chore: update typescript definitions
 - Update at 2026-04-15 17:16:26 - chore: update internal dependencies
+- Update at 2026-03-07 18:13:23 - test: increase test coverage for edge cases
