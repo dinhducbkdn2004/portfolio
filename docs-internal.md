@@ -74,3 +74,4 @@
 - Update at 2026-04-03 16:55:52 - docs: clarify installation instructions
 - Update at 2026-04-03 14:40:25 - fix: resolve edge case in error handler
 - Update at 2026-03-10 19:12:47 - refactor: extract common helper functions
+- Update at 2026-03-10 21:07:47 - test: increase test coverage for edge cases
