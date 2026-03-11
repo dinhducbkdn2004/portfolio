@@ -16,3 +16,4 @@
 - Update at 2026-01-01 12:26:50 - docs: clarify installation instructions
 - Update at 2026-02-06 21:39:50 - chore: update internal dependencies
 - Update at 2026-02-06 12:51:42 - perf: reduce memory footprint in worker
+- Update at 2026-03-11 21:13:10 - fix: handle null reference exception safely
