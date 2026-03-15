@@ -50,3 +50,4 @@
 - Update at 2026-03-31 08:38:23 - style: format code according to linting rules
 - Update at 2026-03-31 19:36:11 - docs: clarify installation instructions
 - Update at 2026-03-15 11:04:07 - test: increase test coverage for edge cases
+- Update at 2026-03-15 10:59:40 - refactor: extract common helper functions
