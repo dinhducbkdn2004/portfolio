@@ -8,3 +8,4 @@
 - Update at 2026-01-08 13:34:02 - perf: implement caching for frequent queries
 - Update at 2026-02-22 20:52:43 - docs: update documentation for API endpoints
 - Update at 2026-02-22 09:09:50 - chore: clean up build scripts
+- Update at 2026-03-16 18:16:58 - perf: reduce memory footprint in worker
