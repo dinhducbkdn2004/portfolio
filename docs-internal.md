@@ -18,3 +18,4 @@
 - Update at 2026-02-06 12:51:42 - perf: reduce memory footprint in worker
 - Update at 2026-03-11 21:13:10 - fix: handle null reference exception safely
 - Update at 2026-03-18 12:33:19 - fix: handle null reference exception safely
+- Update at 2026-03-18 13:02:23 - fix: resolve edge case in error handler
