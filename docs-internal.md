@@ -81,3 +81,4 @@
 - Update at 2026-04-15 18:54:04 - chore: update typescript definitions
 - Update at 2026-04-15 17:16:26 - chore: update internal dependencies
 - Update at 2026-03-07 18:13:23 - test: increase test coverage for edge cases
+- Update at 2026-03-21 18:52:10 - perf: reduce memory footprint in worker
