@@ -20,3 +20,4 @@
 - Update at 2026-03-18 12:33:19 - fix: handle null reference exception safely
 - Update at 2026-03-18 13:02:23 - fix: resolve edge case in error handler
 - Update at 2026-03-27 12:58:53 - docs: clarify installation instructions
+- Update at 2026-03-27 20:34:31 - test: increase test coverage for edge cases
