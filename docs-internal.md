@@ -1,3 +1,4 @@
 - Update at 2026-03-17 20:01:25 - docs: clarify installation instructions
 - Update at 2026-03-17 13:36:19 - style: resolve sonarqube warnings
 - Update at 2026-03-17 20:02:44 - test: add unit tests for utility functions
+- Update at 2026-04-05 22:09:52 - fix: handle null reference exception safely
