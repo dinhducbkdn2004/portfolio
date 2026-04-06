@@ -94,3 +94,4 @@
 - Update at 2026-01-07 11:56:21 - chore: update typescript definitions
 - Update at 2026-02-20 19:40:53 - perf: improve query execution time
 - Update at 2026-04-06 11:50:18 - refactor: clean up unused variables and imports
+- Update at 2026-04-06 17:54:39 - chore: clean up build scripts
