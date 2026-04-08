@@ -43,3 +43,4 @@
 - Update at 2026-04-09 20:16:48 - test: add unit tests for utility functions
 - Update at 2026-04-09 11:14:06 - ci: update GitHub actions workflow
 - Update at 2026-04-08 20:07:49 - refactor: extract common helper functions
+- Update at 2026-04-08 18:59:20 - docs: update documentation for API endpoints
