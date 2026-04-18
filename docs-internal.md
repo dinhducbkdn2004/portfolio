@@ -68,3 +68,4 @@
 - Update at 2026-04-22 16:48:23 - test: increase test coverage for edge cases
 - Update at 2026-04-22 12:28:08 - ci: update GitHub actions workflow
 - Update at 2026-04-22 13:05:07 - perf: improve query execution time
+- Update at 2026-04-18 08:51:22 - feat: add support for extended configuration
