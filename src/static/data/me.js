@@ -132,7 +132,11 @@ const ME = {
         { name: 'Angular', icon: '/tech-stack/angular.svg' },
         { name: 'Tailwind CSS', icon: '/tech-stack/tailwindcss.svg' },
         { name: 'Bootstrap', icon: '/tech-stack/bootstrap.svg' },
-        { name: 'Shadcn UI', icon: '/tech-stack/shadcn-ui-light.svg', iconDark: '/tech-stack/shadcn-ui-dark.svg' },
+        {
+            name: 'Shadcn UI',
+            icon: '/tech-stack/shadcn-ui-light.svg',
+            iconDark: '/tech-stack/shadcn-ui-dark.svg',
+        },
         { name: 'Ant Design', icon: '/tech-stack/ant-design.svg' },
         { name: 'Material Angular', icon: '/tech-stack/material-ui.svg' },
     ],
@@ -145,7 +149,11 @@ const ME = {
 
     tools: [
         { name: 'Git', icon: '/tech-stack/git.svg' },
-        { name: 'GitHub', icon: '/tech-stack/github-light.svg', iconDark: '/tech-stack/github-dark.svg' },
+        {
+            name: 'GitHub',
+            icon: '/tech-stack/github-light.svg',
+            iconDark: '/tech-stack/github-dark.svg',
+        },
         { name: 'Docker', icon: '/tech-stack/docker.svg' },
         { name: 'Postman', icon: '/tech-stack/postman.svg' },
         { name: 'Vite', icon: '/vite.svg' },
@@ -153,7 +161,10 @@ const ME = {
     ],
 
     architectures: [
-        { name: 'Microservices Architecture', description: 'Microservices Architecture' },
+        {
+            name: 'Microservices Architecture',
+            description: 'Microservices Architecture',
+        },
         { name: 'RAG', description: 'Retrieval-Augmented Generation' },
         { name: 'MVC', description: 'Model-View-Controller' },
         { name: 'RBAC', description: 'Role-Based Access Control' },
@@ -164,8 +175,10 @@ const ME = {
         {
             name: 'Tiếng Anh',
             nameEn: 'English',
-            description: 'Trung cấp - Đọc hiểu tài liệu kỹ thuật, giao tiếp cơ bản',
-            descriptionEn: 'Intermediate – reading technical documentation, basic communication',
+            description:
+                'Trung cấp - Đọc hiểu tài liệu kỹ thuật, giao tiếp cơ bản',
+            descriptionEn:
+                'Intermediate – reading technical documentation, basic communication',
         },
     ],
 
@@ -265,14 +278,15 @@ const ME = {
             descriptionEn:
                 'A real-time communication app with peer-to-peer video calls, instant messaging, file sharing, and OAuth integration.',
             role: 'Frontend Developer',
-                honors: [
-                    {
-                        title: 'Academic Encouragement Scholarship',
-                        titleEn: 'Academic Encouragement Scholarship',
-                        organization: 'Da Nang University of Science and Technology',
-                        year: '2024',
-                    },
-                ],
+            honors: [
+                {
+                    title: 'Academic Encouragement Scholarship',
+                    titleEn: 'Academic Encouragement Scholarship',
+                    organization:
+                        'Da Nang University of Science and Technology',
+                    year: '2024',
+                },
+            ],
             technologies: [
                 'React',
                 'Node.js',
