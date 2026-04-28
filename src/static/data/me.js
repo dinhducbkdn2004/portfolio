@@ -1,12 +1,12 @@
 const ME = {
-    name: 'Định Đức',
+    name: 'DINH DUC',
     avatar: '/image/me.jpg',
     avatar2: '/image/me-2.jpg',
-    role: 'Software Engineer',
+    role: 'Software Developer',
     address: 'Đà Nẵng, Việt Nam',
     cvPath: {
-        frontend: '/cv/Frontend_Intern_DINHDUC.pdf',
-        backend: '/cv/Backend_Intern_DINHDUC.pdf',
+        frontend: '/cv/CV_SE_DINHDUC.pdf',
+        backend: '/cv/CV_SE_DINHDUC.pdf',
     },
     socials: [
         {
@@ -35,14 +35,14 @@ const ME = {
     phoneNumber: '+84 779 488 960',
     email: 'dinhducbkdn2004@gmail.com',
 
-    about: 'Sinh viên năm cuối CNTT tìm kiếm vị trí Fresher Frontend Developer để áp dụng nền tảng kỹ thuật vào môi trường chuyên nghiệp. Tôi mong muốn đóng góp xây dựng các giải pháp phần mềm chất lượng cao đồng thời liên tục trau dồi kỹ năng, với mục tiêu dài hạn trở thành một Fullstack Developer thành thạo.',
+    about: 'Sinh viên năm cuối CNTT tìm kiếm vị trí Fresher Software Developer để áp dụng nền tảng kỹ thuật vào môi trường chuyên nghiệp. Tôi mong muốn đóng góp xây dựng các giải pháp phần mềm chất lượng cao đồng thời liên tục trau dồi kỹ năng, với mục tiêu dài hạn trở thành một Fullstack Developer thành thạo.',
     aboutEn:
-        'Final-year IT student seeking a Fresher Frontend Developer position to apply my technical foundation in a professional environment. I am eager to contribute to building high-quality software solutions while continuously refining my skills, with a long-term goal of becoming a proficient Fullstack Developer.',
+        'Final-year IT student seeking a Fresher Software Developer position to apply my technical foundation in a professional environment. I am eager to contribute to building high-quality software solutions while continuously refining my skills, with a long-term goal of becoming a proficient Fullstack Developer.',
 
     personalInfo:
-        'Là một sinh viên năm 4 Đại học Bách Khoa Đà Nẵng đang theo học ngành Công nghệ thông tin. Tôi có niềm đam mê mạnh mẽ với công nghệ, đặc biệt là phát triển website. Tôi thích học hỏi các framework và công nghệ mới, luôn tìm cách cải thiện kỹ năng lập trình và thiết kế giao diện.',
+        'Là sinh viên năm cuối ngành Công nghệ thông tin tại Đại học Bách Khoa Đà Nẵng. Đam mê phát triển phần mềm, đặc biệt là xây dựng các giải pháp web hiện đại. Luôn chủ động học hỏi công nghệ mới và cải thiện kỹ năng lập trình, hướng tới mục tiêu trở thành Fullstack Developer.',
     personalInfoEn:
-        'I am a final-year student at Da Nang University of Science and Technology, majoring in Information Technology. I have a strong passion for technology, especially web development. I enjoy learning new frameworks and technologies, always looking for ways to improve my programming and interface design skills.',
+        'I am a final-year student at Da Nang University of Science and Technology, majoring in Information Technology. Passionate about software development, especially building modern web solutions. Always proactive in learning new technologies and improving programming skills, aiming to become a Fullstack Developer.',
 
     education: [
         {
@@ -50,13 +50,13 @@ const ME = {
             schoolEn: 'Da Nang University of Science and Technology',
             major: 'Công nghệ thông tin',
             majorEn: 'Information Technology',
-            gpa: '3.52/4',
+            gpa: '3.51/4',
             period: '09/2022 - 09/2026',
             periodEn: 'Sep 2022 - Sep 2026',
             description:
                 'Các môn học: Kỹ thuật phần mềm, Cấu trúc dữ liệu & Giải thuật, Lập trình hướng đối tượng, Thiết kế hệ thống.',
             descriptionEn:
-                'Relevant coursework: Software Engineering, Data Structures & Algorithms, Object-Oriented Programming, System Design',
+                'Relevant coursework: Software Engineering, Data Structures & Algorithms, Object-Oriented Programming, System Design.',
         },
     ],
 
@@ -70,9 +70,9 @@ const ME = {
             periodEn: 'Sep 2025 - Dec 2025',
             description: [
                 'Phát triển giao diện web hiện đại, thích ứng sử dụng Angular framework và thư viện Material dưới sự hướng dẫn của các mentor.',
-                'Thực hiện logic quản lý trạng thái phức tạp sử dụng NGXS để đảm bảo lường dữ liệu liền mạch và hiệu suất ứng dụng.',
-                'Hợp tác trong nhóm đa chức năng (BA, Backend, QA) để bàn giao Capstone Project toàn diện, áp dụng nguyên lý Agile với việc theo dõi task trên GitHub.',
-                'Nâng cao khả năng tự nghiên cứu và kỹ năng giải quyết vấn đề thông qua thực hành coding và code reviews.',
+                'Thực hiện logic quản lý trạng thái phức tạp sử dụng NGXS để đảm bảo luồng dữ liệu liền mạch và hiệu suất ứng dụng.',
+                'Hợp tác nhóm đa chức năng (BA, Backend, QA) để bàn giao Capstone Project toàn diện, áp dụng Agile với quản lý task trên GitHub.',
+                'Nâng cao khả năng tự nghiên cứu và giải quyết vấn đề qua coding thực tế và code review.',
             ],
             descriptionEn: [
                 'Developed modern, responsive web user interfaces using Angular framework and Material library under the guidance of senior mentors.',
@@ -84,6 +84,23 @@ const ME = {
     ],
 
     activities: [
+        {
+            organization: 'S-group Organization',
+            role: 'Thành viên kỹ thuật',
+            roleEn: 'Technical member',
+            period: '01/2023 - 01/2024',
+            periodEn: 'Jan 2023 - Jan 2024',
+            description: [
+                'Học hỏi và giải các bài toán thuật toán.',
+                'Chia sẻ kiến thức và kinh nghiệm về các chủ đề kỹ thuật.',
+                'Tham gia phát triển các dự án phần mềm như landing page, web app.',
+            ],
+            descriptionEn: [
+                'Learned and solved algorithm problems.',
+                'Shared knowledge and experience about technical terms.',
+                'Participated in software projects such as developing landing pages and web applications.',
+            ],
+        },
         {
             organization: 'SClub - Danang Soft Skills Club',
             role: 'Ban Tổ chức Sự kiện',
@@ -106,6 +123,7 @@ const ME = {
     skills: [
         { name: 'JavaScript', icon: '/tech-stack/javascript.svg' },
         { name: 'TypeScript', icon: '/tech-stack/typescript.svg' },
+        { name: 'Python', icon: '/tech-stack/python.svg' },
         { name: 'HTML', icon: '/tech-stack/html.svg' },
         { name: 'CSS/SCSS', icon: '/tech-stack/css.svg' },
     ],
@@ -114,84 +132,83 @@ const ME = {
         { name: 'Angular', icon: '/tech-stack/angular.svg' },
         { name: 'Tailwind CSS', icon: '/tech-stack/tailwindcss.svg' },
         { name: 'Bootstrap', icon: '/tech-stack/bootstrap.svg' },
-        {
-            name: 'Shadcn UI',
-            icon: '/tech-stack/shadcn-ui-light.svg',
-            iconDark: '/tech-stack/shadcn-ui-dark.svg',
-        },
+        { name: 'Shadcn UI', icon: '/tech-stack/shadcn-ui-light.svg', iconDark: '/tech-stack/shadcn-ui-dark.svg' },
         { name: 'Ant Design', icon: '/tech-stack/ant-design.svg' },
-        { name: 'Material UI', icon: '/tech-stack/material-ui.svg' },
+        { name: 'Material Angular', icon: '/tech-stack/material-ui.svg' },
     ],
     databases: [
         { name: 'MongoDB', icon: '/tech-stack/mongodb.svg' },
         { name: 'PostgreSQL', icon: '/tech-stack/postgresql.svg' },
+        { name: 'Redis', icon: '/tech-stack/redis.svg' },
+        { name: 'Qdrant', icon: '/tech-stack/qdrant.svg' },
     ],
 
     tools: [
         { name: 'Git', icon: '/tech-stack/git.svg' },
-        {
-            name: 'GitHub',
-            icon: '/tech-stack/github-light.svg',
-            iconDark: '/tech-stack/github-dark.svg',
-        },
-        { name: 'VSCode', icon: '/tech-stack/vs-code.svg' },
+        { name: 'GitHub', icon: '/tech-stack/github-light.svg', iconDark: '/tech-stack/github-dark.svg' },
+        { name: 'Docker', icon: '/tech-stack/docker.svg' },
         { name: 'Postman', icon: '/tech-stack/postman.svg' },
         { name: 'Vite', icon: '/vite.svg' },
         { name: 'Trello', icon: '/tech-stack/trello.svg' },
-        { name: 'Docker', icon: '/tech-stack/docker.svg' },
     ],
 
     architectures: [
+        { name: 'Microservices Architecture', description: 'Microservices Architecture' },
+        { name: 'RAG', description: 'Retrieval-Augmented Generation' },
         { name: 'MVC', description: 'Model-View-Controller' },
-        {
-            name: 'Three-layer',
-            description: 'Presentation, Business Logic, Data Access',
-        },
-        { name: 'Responsive Design', description: 'Mobile-First Approach' },
+        { name: 'RBAC', description: 'Role-Based Access Control' },
+        { name: 'RESTful APIs', description: 'RESTful APIs' },
     ],
 
     languages: [
         {
             name: 'Tiếng Anh',
             nameEn: 'English',
-            description: 'Trung cấp - Đọc hiểu tài liệu, giao tiếp cơ bản',
-            descriptionEn:
-                'Intermediate – reading documentation, basic communication',
+            description: 'Trung cấp - Đọc hiểu tài liệu kỹ thuật, giao tiếp cơ bản',
+            descriptionEn: 'Intermediate – reading technical documentation, basic communication',
         },
     ],
 
     projects: [
         {
-            name: 'MEDICALINK STAFF PORTAL',
+            name: 'MEDICALINK',
             type: 'Website',
             typeEn: 'Website',
-            teamSize: 2,
-            period: '04/2025 - Hiện tại',
-            periodEn: 'April 2025 - Present',
+            teamSize: 1,
+            period: '11/2025 - Hiện tại',
+            periodEn: 'Nov 2025 - Present',
             description:
-                'Một nền tảng quản lý bệnh viện với các cổng thông tin dành riêng cho quản trị viên và bác sĩ.',
+                'Nền tảng y tế microservices giải quyết bài toán điều phối bệnh nhân với hệ thống AI matching hiệu suất cao.',
             descriptionEn:
-                'A hospital management platform with dedicated portals for admins and doctors.',
-            role: 'Frontend Developer',
+                'A microservices-based medical platform solving patient routing challenges through a high-performance, AI-powered symptom-matching engine.',
+            role: 'Fullstack Developer',
             technologies: [
-                'ReactJS',
+                'Python',
+                'LangChain',
+                'Qdrant',
+                'NestJS',
+                'RabbitMQ',
+                'PostgreSQL',
+                'Redis',
+                'React',
                 'TypeScript',
-                'Shadcn UI',
                 'Tailwind CSS',
-                'Vite',
-                'Tanstack Query',
+                'TanStack Query',
+                'Docker',
             ],
             features: [
-                'Phát triển Dashboard Admin & Bác sĩ để quản lý lịch trình, hồ sơ bệnh nhân và tài nguyên bệnh viện.',
-                'Áp dụng TanStack Query để lấy/cache dữ liệu hiệu quả và TanStack Table để sắp xếp và lọc danh sách dữ liệu.',
-                'Xử lý xác thực và kiểm soát truy cập (RBAC); thực hiện validation form sử dụng React Hook Form.',
+                'Xây dựng hệ thống RAG loại bỏ AI hallucination, matching triệu chứng bệnh nhân với hồ sơ bác sĩ nội bộ.',
+                'Tối ưu kiến trúc microservices, tách biệt AI computation khỏi booking, đảm bảo hiệu năng cao.',
+                'Tối ưu chi phí và hiệu suất qua caching, phân tách schema DB.',
+                'Cổng portal đa vai trò (Admin, Doctor, Patient) với quản lý trạng thái client tối ưu và bảo mật RBAC.',
             ],
             featuresEn: [
-                'Developed Admin & Doctor dashboards to manage schedules, patient records, and hospital resources.',
-                'Applied TanStack Query for efficient data fetching/caching and TanStack Table for sorting and filtering data lists.',
-                'Handled authentication and access control (RBAC); implemented form validation using React Hook Form.',
+                'Engineered a Retrieval-Augmented Generation (RAG) system to eliminate AI hallucination, accurately matching patient symptoms strictly to verified internal doctor profiles.',
+                'Decoupled heavy AI computation from core booking transactions via an event-driven microservices architecture, ensuring zero bottlenecks during high-traffic periods.',
+                'Minimized data retrieval latency via caching and achieved cost-efficient service isolation through database schema-level separation.',
+                'Delivered highly responsive, role-based portals (Admin, Doctor, Patient) with optimized client-side state management and strict Role-Based Access Control (RBAC).',
             ],
-            link: 'https://github.com/dinhducbkdn2004/medicalink-fe',
+            link: 'https://pf.medicalink.online',
             github: {
                 frontend: 'https://github.com/dinhducbkdn2004/medicalink-fe',
                 backend: 'https://github.com/dinhducbkdn2004/medicalink-be',
@@ -208,7 +225,7 @@ const ME = {
                 'Nền tảng đầy đủ tính năng phân tích cảm xúc khuôn mặt từ cả hình ảnh tĩnh và webcam thời gian thực, sử dụng mô hình AI/ML.',
             descriptionEn:
                 'A full-featured platform that analyzes facial emotions from both static images and real-time webcam input, using AI/ML models.',
-            role: 'Frontend & Backend Developer',
+            role: 'Fullstack Developer',
             technologies: [
                 'FastAPI',
                 'React',
@@ -247,7 +264,15 @@ const ME = {
                 'Ứng dụng giao tiếp thời gian thực với cuộc gọi video P2P, nhắn tin tức thì, chia sẻ tập tin và tích hợp OAuth.',
             descriptionEn:
                 'A real-time communication app with peer-to-peer video calls, instant messaging, file sharing, and OAuth integration.',
-            role: 'Frontend & Backend Developer',
+            role: 'Frontend Developer',
+                honors: [
+                    {
+                        title: 'Academic Encouragement Scholarship',
+                        titleEn: 'Academic Encouragement Scholarship',
+                        organization: 'Da Nang University of Science and Technology',
+                        year: '2024',
+                    },
+                ],
             technologies: [
                 'React',
                 'Node.js',
